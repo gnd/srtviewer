@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<style>
 		div.post_post_output {
 			width: 99%;
 			position: absolute;
-			bottom: 75%;
+			bottom: 90%;
 			display: inline-block;
 			white-space: pre;
 			margin: auto;
 			text-align: center;
 			color: #444444;
+			display: none;
 		}
 		div.post_output {
 			width: 99%;
 			position: absolute;
-			bottom: 60%;
+			bottom: 65%;
 			display: inline-block;
 			white-space: pre;
 			margin: auto;
 			text-align: center;
 			color: #888888;
+			display: none;
 		}
 		div.main_output {
 			position: absolute;
@@ -29,16 +32,19 @@
 			white-space: pre;
 			margin: auto;
 			text-align: center;
+			font-family: "Arial";
+			//font-weight: 500;
 		}
 		div.pre_output {
 			width: 99%;
 			position: absolute;
-			bottom: 30%;
+			bottom: 20%;
 			display: inline-block;
 			white-space: pre;
 			margin: auto;
 			text-align: center;
 			color: #444444;
+			display: none;
 		}
 	</style>
 <input type='file' accept='.srt' id='button' onchange='openFile(event)'><br>
