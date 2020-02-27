@@ -3,28 +3,6 @@
 <head>
 	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<style>
-		div.post_post_output {
-			width: 99%;
-			position: absolute;
-			bottom: 90%;
-			display: inline-block;
-			white-space: pre;
-			margin: auto;
-			text-align: center;
-			color: #444444;
-			display: none;
-		}
-		div.post_output {
-			width: 99%;
-			position: absolute;
-			bottom: 65%;
-			display: inline-block;
-			white-space: pre;
-			margin: auto;
-			text-align: center;
-			color: #888888;
-			display: none;
-		}
 		div.main_output {
 			position: absolute;
 			bottom: 45%;
@@ -33,26 +11,11 @@
 			margin: auto;
 			text-align: center;
 			font-family: "Arial";
-			//font-weight: 500;
-		}
-		div.pre_output {
-			width: 99%;
-			position: absolute;
-			bottom: 20%;
-			display: inline-block;
-			white-space: pre;
-			margin: auto;
-			text-align: center;
-			color: #444444;
-			display: none;
 		}
 	</style>
 <input type='file' accept='.srt' id='button' onchange='openFile(event)'><br>
 <body style="background: black; color: white">
-<div id="post_post_output" class="post_post_output"></div>
-<div id="post_output" class="post_output"></div>
 <div id="main_output" class="main_output"></div>
-<div id="pre_output" class="pre_output"></div>
 <script>
 window.subtitles = [];
 window.currentSubtitleIndex = 0;
@@ -84,9 +47,6 @@ function process_srt() {
 	const scale = document.body.clientWidth / el.clientWidth;
 	var fontsize = parseFloat(window.getComputedStyle(el).fontSize) * scale + "px";
 	el.style.fontSize = fontsize;
-	document.getElementById("pre_output").style.fontSize = fontsize;
-	document.getElementById("post_output").style.fontSize = fontsize;
-	document.getElementById("post_post_output").style.fontSize = fontsize;
 	el.innerHTML = "";
 	el.style.width = "100%";
 	window.subtitles = parts;
@@ -106,22 +66,8 @@ function prev() {
 }
 
 function updateSubtitle() {
-	if (window.currentSubtitleIndex > 0) {
-		if (window.currentSubtitleIndex+1 < window.subtitles.length) {
-			const pre = window.subtitles[window.currentSubtitleIndex + 1];
-			document.getElementById("pre_output").innerHTML = pre.html;
-		}
-	}
 	const current = window.subtitles[window.currentSubtitleIndex];
 	document.getElementById("main_output").innerHTML = current.html;
-	if (window.currentSubtitleIndex > 0) {
-		const prev = window.subtitles[window.currentSubtitleIndex - 1];
-		document.getElementById("post_output").innerHTML = prev.html;
-	}
-	if (window.currentSubtitleIndex > 1) {
-		const prev_prev = window.subtitles[window.currentSubtitleIndex - 2];
-		document.getElementById("post_post_output").innerHTML = prev_prev.html;
-	}
 }
 
 function keypress(ev) {

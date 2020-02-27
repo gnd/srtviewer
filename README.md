@@ -1,25 +1,28 @@
-HTML subtitle viewer
-====================
+HTML subtitle viewer for the Theatre
+====================================
 
 Usage:
 
-* Open srtviewer.html in Firefox
-* Click anywhere (to focus) and paste the SRT file contents
-* Press Space to play/pause
-* Press Shift-left/right arrow to seek 3 seconds
-* Press Alt-left/right arrow to seek 10 seconds
-* Press Ctrl-left/right arrow to seek 60 seconds
-* Press T to toggle showing the current time (for synchronization)
-
-Example SRT
------------
+* Open srtviewer.html in the browser
+* Load subtitles
+* Play by pressing Space or 'p' key
+* Return by pressing 'o' key
+* The subtitles do not have to be timed
+* The format accepts one or two lines per subtitle:
 
 ```
-1
-00:00:28,237 --> 00:00:31,072
-Sold! Your number, sir?
+A STORY ABOUT METASTASES.
 
-2
-00:00:32,157 --> 00:00:33,700
-Thank you.
+METASTASIS MEANS MIGRATION IN GREEK.
+
+THE WORD CAME TO MEAN THE SPREAD
+OF TUMORS WITHIN THE BODY
+
+DURING THE FINAL STAGES OF CANCER.
+
+MOST TUMORS ARE FOUND
+ONLY AFTER THEIR VOLUME REACHES 1CM2,
+
+WHICH IS ROUGHLY A BILLION CELLS
+WEIGHTING AROUND 1G.
 ```
